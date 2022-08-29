@@ -8,6 +8,7 @@ pyenv:
 	pyenv uninstall ${PROJECT} || true
 	pyenv virtualenv ${PYTHON_VERSION} ${PROJECT}
 	pyenv local ${PROJECT}
+	pip install black pytest pdbpp poetry
 
 .PHONY: all
 all:
