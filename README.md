@@ -1,2 +1,2 @@
-# pytest_examples
+# pytest-examples
 examples of using pytest
