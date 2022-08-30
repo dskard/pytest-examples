@@ -9,6 +9,9 @@ pyenv:
 	pyenv virtualenv ${PYTHON_VERSION} ${PROJECT}
 	pyenv local ${PROJECT}
 	pip install black pytest pdbpp poetry
+	sed -i '/export VIRTUAL_ENV=/d' .envrc
+	echo "export VIRTUAL_ENV=\$$$\(pyenv prefix)" >> .envrc
+	direnv allow || true
 
 .PHONY: all
 all:
